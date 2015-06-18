@@ -9,6 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Created by dlafeir on 6/18/15.
@@ -30,6 +31,7 @@ public class PlayerTest {
     public void shouldReturnOnemWhenGettingUserInput() throws IOException {
         BufferedReader bufferedReader = mock(BufferedReader.class);
         Player player = new Player(bufferedReader);
+        when(bufferedReader.readLine()).thenReturn("1");
 
         int move = player.getPlayersMove();
 
