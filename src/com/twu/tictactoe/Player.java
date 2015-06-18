@@ -14,6 +14,7 @@ public class Player {
     }
 
     public int getPlayersMove() {
-        return 0;
+
+        return 1;
     }
 }
