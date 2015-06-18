@@ -1,5 +1,6 @@
 package com.twu.tictactoe;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -12,19 +13,32 @@ import static org.mockito.Mockito.verify;
  */
 public class GameTest {
 
+    private Game game;
+    private Board board;
+    private List<Player> players;
+
+    @Before
+    public void setup(){
+        players = mock(List.class);
+        board = mock(Board.class);
+        game = new Game(board, players);
+    }
 
     @Test
     public void shouldCallPrintBoardWhenSettingUpGame(){
-        List<Player> players = mock(List.class);
-        Board board = mock(Board.class);
-        Game game = new Game(board, players);
-
         game.setupGame();
 
         verify(board).printBoard();
     }
 
+    @Test
+    public void shouldCallGetUserInputWhenPlayingTheGame(){
+        Player player = mock(Player.class);
 
+        game.play();
+
+        verify(player).getPlayersMove();
+    }
 
 
 }
