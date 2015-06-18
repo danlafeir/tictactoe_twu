@@ -46,6 +46,7 @@ public class GameTest {
 
     @Test
     public void shouldUseNumberTwoInPutMoveOnBoardWhenPlayerInputIsTwo(){
+        when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
         when(player1.getPlayersMove()).thenReturn(2);
 
         game.play();
@@ -55,6 +56,7 @@ public class GameTest {
 
     @Test
     public void shouldUseNumberThreeInPutMoveOnBoardWhenPlayerInputIsThree(){
+        when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
         when(player1.getPlayersMove()).thenReturn(3);
 
         game.play();
@@ -64,6 +66,7 @@ public class GameTest {
 
     @Test
     public void shouldUseAOWhenPlayerTwoMakesAMove(){
+        when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
         when(player1.getPlayersMove()).thenReturn(1);
         when(player2.getPlayersMove()).thenReturn(3);
 
@@ -82,6 +85,7 @@ public class GameTest {
 
     @Test
     public void shouldCheckIfMoveIsValidWithWhenPlayerOneChoosesOne(){
+        when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
         when(player1.getPlayersMove()).thenReturn(1);
 
         game.playerMove(player1, 'X');
@@ -91,6 +95,7 @@ public class GameTest {
 
     @Test
     public void shouldCheckIfMoveIsValidWithWhenPlayerOneChoosesTwo(){
+        when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
         when(player1.getPlayersMove()).thenReturn(2);
 
         game.playerMove(player1, 'X');
@@ -100,18 +105,18 @@ public class GameTest {
 
     @Test
     public void shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid(){
-        when(player1.getPlayersMove()).thenReturn(2);
-        when(board.checkIfMoveIsValid(2)).thenReturn(false);
+        when(player1.getPlayersMove()).thenReturn(2).thenReturn(3);
+        when(board.checkIfMoveIsValid(anyInt())).thenReturn(false).thenReturn(true);
 
         game.playerMove(player1, 'X');
 
-        verify(board, times(1)).putMoveOnBoard(2,'X');
+        verify(board, times(1)).putMoveOnBoard(3,'X');
     }
 
     @Test
     public void shouldPrintBoardOnceWhenAMoveIsInvalid(){
         when(player1.getPlayersMove()).thenReturn(2);
-        when(board.checkIfMoveIsValid(2)).thenReturn(false);
+        when(board.checkIfMoveIsValid(2)).thenReturn(true);
 
         game.playerMove(player1, 'X');
 

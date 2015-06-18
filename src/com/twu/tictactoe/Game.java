@@ -21,15 +21,16 @@ public class Game {
     }
 
     public void play() {
-        playerMove(player1,'X');
+        playerMove(player1, 'X');
         playerMove(player2, 'O');
     }
 
     public void playerMove(Player player, char symbol) {
         currentMove = player.getPlayersMove();
-        if(board.checkIfMoveIsValid(currentMove)){
-            board.putMoveOnBoard(currentMove, symbol);
-            board.printBoard();
+        while(board.checkIfMoveIsValid(currentMove) == false){
+            currentMove = player.getPlayersMove();
         }
+        board.putMoveOnBoard(currentMove, symbol);
+        board.printBoard();
     }
 }
