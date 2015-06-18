@@ -117,4 +117,9 @@ public class GameTest {
 
         verify(board, never()).printBoard();
     }
+
+    @Test
+    public void shouldAskAgainIfInputIsInvalid(){
+        
+    }
 }

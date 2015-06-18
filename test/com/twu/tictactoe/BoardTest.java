@@ -5,6 +5,9 @@ import org.junit.Test;
 
 import java.io.PrintStream;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.mockito.Matchers.booleanThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -75,4 +78,19 @@ public class BoardTest {
         verify(printStream, times(1)).println(correctThirdRow);
     }
 
+    @Test
+    public void shouldReturnFalseWhenMoveIsAlreadyAtThatIndex(){
+        board.putMoveOnBoard(1,'X');
+
+        boolean resultOfCheck = board.checkIfMoveIsValid(1);
+
+        assertThat(resultOfCheck, is(false));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenThereIsNothingAtIndex(){
+        boolean resultOfCheck = board.checkIfMoveIsValid(1);
+
+        assertThat(resultOfCheck, is(true));
+    }
 }
