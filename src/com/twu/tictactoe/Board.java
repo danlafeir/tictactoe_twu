@@ -51,6 +51,7 @@ public class Board {
                 return false;
             }
         }
+        printStream.println("Game is a draw");
         return true;
     }
 }
