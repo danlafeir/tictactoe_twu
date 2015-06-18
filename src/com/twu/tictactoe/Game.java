@@ -8,6 +8,7 @@ public class Game {
     private Board board;
     private Player player1;
     private Player player2;
+    private int currentMove;
 
     public Game(Board board, Player player1, Player player2) {
         this.board = board;
@@ -20,8 +21,11 @@ public class Game {
     }
 
     public void play() {
-        int move = player1.getPlayersMove();
-        board.putMoveOnBoard(move);
+        currentMove = player1.getPlayersMove();
+        board.putMoveOnBoard(currentMove, 'X');
+        board.printBoard();
+        currentMove = player2.getPlayersMove();
+        board.putMoveOnBoard(currentMove, 'O');
         board.printBoard();
     }
 }

@@ -41,7 +41,7 @@ public class BoardTest {
         String correctFirstRow = "X| | ";
         String correctSecondAndThirdRow = " | | ";
 
-        board.putMoveOnBoard(1);
+        board.putMoveOnBoard(1,'X');
         board.printBoard();
 
         verify(printStream, times(1)).println(correctFirstRow);
@@ -54,7 +54,20 @@ public class BoardTest {
         String correctThirdRow = " | |X";
         String correctSecondAndFirstRow = " | | ";
 
-        board.putMoveOnBoard(9);
+        board.putMoveOnBoard(9,'X');
+        board.printBoard();
+
+        verify(printStream, times(2)).println(correctSecondAndFirstRow);
+        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
+        verify(printStream, times(1)).println(correctThirdRow);
+    }
+
+    @Test
+    public void shouldPutAnOInBottomRightPositionWhenReceivingPlayerInputOfNine(){
+        String correctThirdRow = " | |O";
+        String correctSecondAndFirstRow = " | | ";
+
+        board.putMoveOnBoard(9,'O');
         board.printBoard();
 
         verify(printStream, times(2)).println(correctSecondAndFirstRow);

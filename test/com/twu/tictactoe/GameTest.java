@@ -3,7 +3,6 @@ package com.twu.tictactoe;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.*;
 
 /**
@@ -32,17 +31,17 @@ public class GameTest {
     }
 
     @Test
-    public void shouldCallGetUserInputFromPlayer1WhenPlayingTheGame(){
+    public void shouldCallGetPlayersMoveFromPlayer1WhenPlayingTheGame(){
         game.play();
 
         verify(player1).getPlayersMove();
     }
 
     @Test
-    public void shouldPlaceAMoveOneABoardWhenPlayingGame(){
+    public void shouldCallGetPlayersMoveFromPlayer2WhenPlayingTheGame(){
         game.play();
 
-        verify(board).putMoveOnBoard(anyInt());
+        verify(player2).getPlayersMove();
     }
 
     @Test
@@ -51,7 +50,7 @@ public class GameTest {
 
         game.play();
 
-        verify(board).putMoveOnBoard(2);
+        verify(board).putMoveOnBoard(2, 'X');
     }
 
     @Test
@@ -60,7 +59,25 @@ public class GameTest {
 
         game.play();
 
-        verify(board).putMoveOnBoard(3);
+        verify(board).putMoveOnBoard(3, 'X');
+    }
+
+    @Test
+    public void shouldUseAOWhenPlayerTwoMakesAMove(){
+        when(player1.getPlayersMove()).thenReturn(1);
+        when(player2.getPlayersMove()).thenReturn(3);
+
+        game.play();
+
+        verify(board).putMoveOnBoard(1, 'X');
+        verify(board).putMoveOnBoard(3, 'O');
+    }
+
+    @Test
+    public void shouldPrintTheBoardTwiceWhenPlayingTheGame(){
+        game.play();
+
+        verify(board, times(2)).printBoard();
     }
 
 

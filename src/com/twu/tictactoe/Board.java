@@ -29,7 +29,7 @@ public class Board {
         printStream.println();
     }
 
-    public void putMoveOnBoard(int move) {
+    public void putMoveOnBoard(int move, char x) {
         movesOnBoard.set(move, 'X');
     }
 }
