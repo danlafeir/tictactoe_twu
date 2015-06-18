@@ -49,4 +49,17 @@ public class BoardTest {
         verify(printStream, times(2)).println(correctSecondAndThirdRow);
     }
 
+    @Test
+    public void shouldPutAnXInBottomRightPositionWhenReceivingPlayerInputOfNine(){
+        String correctThirdRow = " | |X";
+        String correctSecondAndFirstRow = " | | ";
+
+        board.putMoveOnBoard(9);
+        board.printBoard();
+
+        verify(printStream, times(2)).println(correctSecondAndFirstRow);
+        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
+        verify(printStream, times(1)).println(correctThirdRow);
+    }
+
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Created by dlafeir on 6/18/15.
@@ -46,6 +47,24 @@ public class GameTest {
         game.play();
 
         verify(board).putMoveOnBoard(anyInt());
+    }
+
+    @Test
+    public void shouldUseNumberTwoInPutMoveOnBoardWhenPlayerInputIsTwo(){
+        when(player1.getPlayersMove()).thenReturn(2);
+
+        game.play();
+
+        verify(board).putMoveOnBoard(2);
+    }
+
+    @Test
+    public void shouldUseNumberThreeInPutMoveOnBoardWhenPlayerInputIsThree(){
+        when(player1.getPlayersMove()).thenReturn(3);
+
+        game.play();
+
+        verify(board).putMoveOnBoard(3);
     }
 
 

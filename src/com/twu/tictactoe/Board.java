@@ -30,8 +30,6 @@ public class Board {
     }
 
     public void putMoveOnBoard(int move) {
-        if(movesOnBoard.get(move).equals(null)){
-            movesOnBoard.set(move, 'X');
-        }
+        movesOnBoard.set(move, 'X');
     }
 }
