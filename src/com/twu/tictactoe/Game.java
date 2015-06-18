@@ -22,5 +22,6 @@ public class Game {
 
     public void play() {
         player1.getPlayersMove();
+        board.putMoveOnBoard(1);
     }
 }

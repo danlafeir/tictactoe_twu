@@ -1,5 +1,6 @@
 package com.twu.tictactoe;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
@@ -14,23 +15,38 @@ import static org.mockito.Mockito.verify;
  */
 public class BoardTest {
 
+    private PrintStream printStream;
+    private Board board;
+    public static final String DIVIDER_OF_ROWS = "-----";
+
+
+    @Before
+    public void setup(){
+        printStream = mock(PrintStream.class);
+        board = new Board(printStream);
+    }
+
     @Test
     public void shouldPrintBoardCorrectly(){
-        PrintStream printStream;
-        printStream = mock(PrintStream.class);
-        Board board = new Board(printStream);
         String correctOddRow = " | | ";
-        String correctEvenRow = "-------";
 
         board.printBoard();
 
         verify(printStream, times(3)).println(correctOddRow);
-        verify(printStream, times(2)).println(correctEvenRow);
+        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
     }
 
     @Test
-    public void shouldPutAnXInTopLeftPositionWhenRecievingPlayerInputOfOne(){
+    public void shouldPutAnXInTopLeftPositionWhenReceivingPlayerInputOfOne(){
+        String correctFirstRow = "X| | ";
+        String correctSecondAndThirdRow = " | | ";
 
+        board.putMoveOnBoard(1);
+        board.printBoard();
+
+        verify(printStream, times(1)).println(correctFirstRow);
+        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
+        verify(printStream, times(2)).println(correctSecondAndThirdRow);
     }
 
 }
