@@ -22,7 +22,10 @@ public class Game {
 
     public void play() {
         playerMove(player1, 'X');
-        playerMove(player2, 'O');
+        while(board.isFull()){
+            playerMove(player1, 'X');
+            playerMove(player2, 'O');
+        }
     }
 
     public void playerMove(Player player, char symbol) {

@@ -102,4 +102,17 @@ public class BoardTest {
 
         verify(printStream).println("Location already taken");
     }
+
+    @Test
+    public void shouldReturnTrueWhenBoardIsFull(){
+        for(int i=0; i<=10; i++){
+            board.putMoveOnBoard(1,'X');
+        }
+
+        boolean resultOfCheck = board.isFull();
+
+        assertThat(resultOfCheck, is(true));
+    }
+
+
 }

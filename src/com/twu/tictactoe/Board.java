@@ -43,4 +43,8 @@ public class Board {
             return false;
         }
     }
+
+    public boolean isFull() {
+        return true;
+    }
 }

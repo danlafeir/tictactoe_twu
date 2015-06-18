@@ -3,6 +3,8 @@ package com.twu.tictactoe;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.*;
 
 /**
@@ -121,6 +123,13 @@ public class GameTest {
         game.playerMove(player1, 'X');
 
         verify(board, times(1)).printBoard();
+    }
+
+    @Test
+    public void shouldCallIsFullOnTheBoardWhenPlaying() {
+        game.play();
+
+        verify(board).isFull();
     }
 
 
