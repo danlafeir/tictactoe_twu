@@ -9,16 +9,19 @@ import java.io.PrintStream;
  */
 public class Player {
 
+    private String name;
     private BufferedReader bufferedReader;
     private PrintStream printStream;
 
-    public Player(BufferedReader bufferedReader, PrintStream printStream) {
+    public Player(String name, BufferedReader bufferedReader, PrintStream printStream) {
+        this.name = name;
         this.bufferedReader = bufferedReader;
         this.printStream = printStream;
     }
 
     public int getPlayersMove() {
-        printStream.print("Please enter a position between 1 and 9: ");
+        String inputMessage = name + " please enter a position between 1 and 9: ";
+        printStream.print(inputMessage);
         int move = 0;
         try {
             move = Integer.parseInt(bufferedReader.readLine());
@@ -28,4 +31,5 @@ public class Player {
 
         return move;
     }
+
 }

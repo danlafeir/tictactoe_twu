@@ -26,7 +26,7 @@ public class PlayerTest {
     public void setup(){
         bufferedReader = mock(BufferedReader.class);
         printStream = mock(PrintStream.class);
-        player = new Player(bufferedReader, printStream);
+        player = new Player("Player 1", bufferedReader, printStream);
     }
 
 
@@ -39,7 +39,7 @@ public class PlayerTest {
 
 
     @Test
-    public void shouldReturnOneWhenGettingUserInput() throws IOException {
+    public void shouldReturnOneWhenGettingPlayerInput() throws IOException {
         when(bufferedReader.readLine()).thenReturn("1");
 
         int move = player.getPlayersMove();
@@ -48,12 +48,22 @@ public class PlayerTest {
     }
 
     @Test
-    public void shouldPrintMessageToUserWhenGrabbingUserInput(){
+    public void shouldPrintMessageTolayer2WhenGrabbingUserInput(){
+        String correctMessage = "Player 1 please enter a position between 1 and 9: ";
+
         player.getPlayersMove();
 
-        verify(printStream).print("Please enter a position between 1 and 9: ");
+        verify(printStream).print(correctMessage);
     }
 
-    
+    @Test
+    public void shouldPrintMessageToPlayer2WhenGrabbingUserInput(){
+        player = new Player("Player 2", bufferedReader, printStream);
+        String correctMessage = "Player 2 please enter a position between 1 and 9: ";
+
+        player.getPlayersMove();
+
+        verify(printStream).print(correctMessage);
+    }
 
 }
