@@ -99,27 +99,24 @@ public class GameTest {
     }
 
     @Test
-    public void shouldNotCallPutMoveOnBoardWhenMoveIsInvalid(){
+    public void shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid(){
         when(player1.getPlayersMove()).thenReturn(2);
         when(board.checkIfMoveIsValid(2)).thenReturn(false);
 
         game.playerMove(player1, 'X');
 
-        verify(board, never()).putMoveOnBoard(2,'X');
+        verify(board, times(1)).putMoveOnBoard(2,'X');
     }
 
     @Test
-    public void shouldNotPrintBoardWhenMoveIsInvalid(){
+    public void shouldPrintBoardOnceWhenAMoveIsInvalid(){
         when(player1.getPlayersMove()).thenReturn(2);
         when(board.checkIfMoveIsValid(2)).thenReturn(false);
 
         game.playerMove(player1, 'X');
 
-        verify(board, never()).printBoard();
+        verify(board, times(1)).printBoard();
     }
 
-    @Test
-    public void shouldAskAgainIfInputIsInvalid(){
-        
-    }
+
 }

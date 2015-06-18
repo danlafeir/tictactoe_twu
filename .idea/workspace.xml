@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0375ed58-1024-4ba4-92d4-54ad864fe8a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/tictactoe/Board.java" afterPath="$PROJECT_DIR$/src/com/twu/tictactoe/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java" afterPath="$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/tictactoe/GameTest.java" afterPath="$PROJECT_DIR$/test/com/twu/tictactoe/GameTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tictactoe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,8 +91,8 @@
       <file leaf-file-name="GameTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/tictactoe/GameTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.91493386">
-              <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.40453687">
+              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -330,33 +327,7 @@
       <recent name="com.twu.tictactoe" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BoardTest.shouldReturnTrueWhenThereIsNothingAtIndex">
-    <configuration default="false" name="GameTest.shouldCheckIfMoveIsValidWhenMakingAMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.tictactoe.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="tictactoe" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.tictactoe" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.tictactoe.GameTest" />
-      <option name="METHOD_NAME" value="shouldCheckIfMoveIsValidWhenMakingAMove" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.GameTest.shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid">
     <configuration default="false" name="GameTest.shouldNotCallPutMoveOnBoardWhenMoveIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -448,6 +419,32 @@
       <option name="PACKAGE_NAME" value="com.twu.tictactoe" />
       <option name="MAIN_CLASS_NAME" value="com.twu.tictactoe.BoardTest" />
       <option name="METHOD_NAME" value="shouldReturnTrueWhenThereIsNothingAtIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="GameTest.shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.tictactoe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="tictactoe" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.tictactoe" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.tictactoe.GameTest" />
+      <option name="METHOD_NAME" value="shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -705,19 +702,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.GameTest.shouldCheckIfMoveIsValidWhenMakingAMove" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotCallPutMoveOnBoardWhenMoveIsInvalid" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotPrintBoardWhenMoveIsInvalid" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenMoveIsAlreadyAtThatIndex" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenThereIsNothingAtIndex" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotCallPutMoveOnBoardWhenMoveIsInvalid" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotPrintBoardWhenMoveIsInvalid" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenMoveIsAlreadyAtThatIndex" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenThereIsNothingAtIndex" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenThereIsNothingAtIndex" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenMoveIsAlreadyAtThatIndex" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotPrintBoardWhenMoveIsInvalid" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotCallPutMoveOnBoardWhenMoveIsInvalid" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.shouldCheckIfMoveIsValidWhenMakingAMove" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GameTest.shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotPrintBoardWhenMoveIsInvalid" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenThereIsNothingAtIndex" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenMoveIsAlreadyAtThatIndex" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.shouldNotCallPutMoveOnBoardWhenMoveIsInvalid" />
       </list>
     </recent_temporary>
   </component>
@@ -731,12 +728,12 @@
       <created>1434652363542</created>
       <option name="number" value="Default" />
       <updated>1434652363542</updated>
-      <workItem from="1434652367093" duration="8722000" />
+      <workItem from="1434652367093" duration="8931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8722000" />
+    <option name="totallyTimeSpent" value="8931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -761,7 +758,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -881,8 +878,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/tictactoe/GameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91493386">
-          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.40453687">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
