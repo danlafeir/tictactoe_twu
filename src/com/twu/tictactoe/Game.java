@@ -22,9 +22,9 @@ public class Game {
 
     public void play() {
         playerMove(player1, 'X');
-        while(board.isFull()){
-            playerMove(player1, 'X');
+        while(board.isFull() == false){
             playerMove(player2, 'O');
+            playerMove(player1, 'X');
         }
     }
 

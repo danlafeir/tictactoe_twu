@@ -70,7 +70,7 @@ public class BoardTest {
         String correctThirdRow = " | |O";
         String correctSecondAndFirstRow = " | | ";
 
-        board.putMoveOnBoard(9,'O');
+        board.putMoveOnBoard(gi9,'O');
         board.printBoard();
 
         verify(printStream, times(2)).println(correctSecondAndFirstRow);
@@ -105,8 +105,8 @@ public class BoardTest {
 
     @Test
     public void shouldReturnTrueWhenBoardIsFull(){
-        for(int i=0; i<=10; i++){
-            board.putMoveOnBoard(1,'X');
+        for(int i=1; i<=9; i++){
+            board.putMoveOnBoard(i,'X');
         }
 
         boolean resultOfCheck = board.isFull();
@@ -114,5 +114,11 @@ public class BoardTest {
         assertThat(resultOfCheck, is(true));
     }
 
+    @Test
+    public void shouldReturnFalseWhenBoardIsNotFull(){
+        boolean resultOfCheck = board.isFull();
+
+        assertThat(resultOfCheck, is(false));
+    }
 
 }
