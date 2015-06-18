@@ -80,5 +80,7 @@ public class GameTest {
         verify(board, times(2)).printBoard();
     }
 
+    @Test
+    public void shouldCheckIfMoveIsValidWhenPlayingTheGame(){}
 
 }

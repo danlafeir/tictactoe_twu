@@ -21,11 +21,13 @@ public class Game {
     }
 
     public void play() {
-        currentMove = player1.getPlayersMove();
-        board.putMoveOnBoard(currentMove, 'X');
-        board.printBoard();
-        currentMove = player2.getPlayersMove();
-        board.putMoveOnBoard(currentMove, 'O');
+        playerMove(player1,'X');
+        playerMove(player2, 'O');
+    }
+
+    public void playerMove(Player player, char symbol) {
+        currentMove = player.getPlayersMove();
+        board.putMoveOnBoard(currentMove, symbol);
         board.printBoard();
     }
 }
