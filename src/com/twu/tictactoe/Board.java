@@ -21,6 +21,7 @@ public class Board {
     }
 
     public void printBoard() {
+        printStream.println();
         printStream.println(movesOnBoard.get(1) + "|" + movesOnBoard.get(2) + "|" + movesOnBoard.get(3));
         printStream.println(CORRECT_EVEN_ROW);
         printStream.println(movesOnBoard.get(4) + "|" + movesOnBoard.get(5) + "|" + movesOnBoard.get(6));
@@ -30,6 +31,6 @@ public class Board {
     }
 
     public void putMoveOnBoard(int move, char x) {
-        movesOnBoard.set(move, 'X');
+        movesOnBoard.set(move, x);
     }
 }
