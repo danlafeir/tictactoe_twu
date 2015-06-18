@@ -34,7 +34,7 @@ public class Board {
         movesOnBoard.set(move, x);
     }
 
-    public void checkIfMoveIsValid(int i) {
-
+    public boolean checkIfMoveIsValid(int i) {
+        return false;
     }
 }

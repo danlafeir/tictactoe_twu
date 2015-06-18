@@ -81,7 +81,7 @@ public class GameTest {
     }
 
     @Test
-    public void shouldCheckIfMoveIsValidWhenMakingAMove(){
+    public void shouldCheckIfMoveIsValidWithWhenPlayerOneChoosesOne(){
         when(player1.getPlayersMove()).thenReturn(1);
 
         game.playerMove(player1, 'X');
@@ -89,4 +89,32 @@ public class GameTest {
         verify(board).checkIfMoveIsValid(1);
     }
 
+    @Test
+    public void shouldCheckIfMoveIsValidWithWhenPlayerOneChoosesTwo(){
+        when(player1.getPlayersMove()).thenReturn(2);
+
+        game.playerMove(player1, 'X');
+
+        verify(board).checkIfMoveIsValid(2);
+    }
+
+    @Test
+    public void shouldNotCallPutMoveOnBoardWhenMoveIsInvalid(){
+        when(player1.getPlayersMove()).thenReturn(2);
+        when(board.checkIfMoveIsValid(2)).thenReturn(false);
+
+        game.playerMove(player1, 'X');
+
+        verify(board, never()).putMoveOnBoard(2,'X');
+    }
+
+    @Test
+    public void shouldNotPrintBoardWhenMoveIsInvalid(){
+        when(player1.getPlayersMove()).thenReturn(2);
+        when(board.checkIfMoveIsValid(2)).thenReturn(false);
+
+        game.playerMove(player1, 'X');
+
+        verify(board, never()).printBoard();
+    }
 }

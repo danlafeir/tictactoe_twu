@@ -27,8 +27,9 @@ public class Game {
 
     public void playerMove(Player player, char symbol) {
         currentMove = player.getPlayersMove();
-        board.checkIfMoveIsValid(1);
-        board.putMoveOnBoard(currentMove, symbol);
-        board.printBoard();
+        if(board.checkIfMoveIsValid(currentMove)){
+            board.putMoveOnBoard(currentMove, symbol);
+            board.printBoard();
+        }
     }
 }
