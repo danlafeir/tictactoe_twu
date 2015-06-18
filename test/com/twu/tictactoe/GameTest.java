@@ -3,12 +3,8 @@ package com.twu.tictactoe;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
-
 import static org.mockito.Matchers.anyInt;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by dlafeir on 6/18/15.

@@ -19,10 +19,9 @@ public class Game {
         board.printBoard();
     }
 
-
     public void play() {
-        player1.getPlayersMove();
-        board.putMoveOnBoard(1);
+        int move = player1.getPlayersMove();
+        board.putMoveOnBoard(move);
         board.printBoard();
     }
 }
