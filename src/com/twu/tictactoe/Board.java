@@ -7,8 +7,8 @@ import java.io.PrintStream;
  */
 public class Board {
     private PrintStream printStream;
-    public static final String CORRECT_EVEN_ROW = "---------";
-    public static final String CORRECT_ODD_ROW = "  |  |  ";
+    public static final String CORRECT_EVEN_ROW = "-------";
+    public static final String CORRECT_ODD_ROW = " | | ";
 
 
     public Board(PrintStream printStream) {

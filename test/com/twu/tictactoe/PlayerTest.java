@@ -54,6 +54,6 @@ public class PlayerTest {
         verify(printStream).print("Please enter a position between 1 and 9: ");
     }
 
-
+    
 
 }

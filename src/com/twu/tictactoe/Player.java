@@ -23,10 +23,8 @@ public class Player {
         try {
             move = Integer.parseInt(bufferedReader.readLine());
         }
-        catch (NumberFormatException e){
-        }
-        catch (IOException e) {
-        }
+        catch (NumberFormatException e){}
+        catch (IOException e) {}
 
         return move;
     }

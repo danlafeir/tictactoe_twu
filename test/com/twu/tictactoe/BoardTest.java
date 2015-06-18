@@ -19,12 +19,18 @@ public class BoardTest {
         PrintStream printStream;
         printStream = mock(PrintStream.class);
         Board board = new Board(printStream);
-        String correctOddRow = "  |  |  ";
-        String correctEvenRow = "---------";
+        String correctOddRow = " | | ";
+        String correctEvenRow = "-------";
 
         board.printBoard();
 
         verify(printStream, times(3)).println(correctOddRow);
         verify(printStream, times(2)).println(correctEvenRow);
     }
+
+    @Test
+    public void shouldPutAnXInTopLeftPositionWhenRecievingPlayerInputOfOne(){
+
+    }
+
 }
