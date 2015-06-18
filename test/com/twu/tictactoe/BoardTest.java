@@ -121,4 +121,14 @@ public class BoardTest {
         assertThat(resultOfCheck, is(false));
     }
 
+    @Test
+    public void shouldPrintMessageWhenBoardIsFull(){
+        for(int i=1; i<=9; i++){
+            board.putMoveOnBoard(i,'X');
+        }
+
+        board.isFull();
+
+        verify(printStream).println("Game is a draw");
+    }
 }

@@ -113,8 +113,8 @@
       <file leaf-file-name="BoardTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5179584">
-              <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
+            <state vertical-scroll-proportion="1.0706767">
+              <caret line="131" column="54" selection-start-line="131" selection-start-column="54" selection-end-line="131" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -325,7 +325,7 @@
       <recent name="com.twu.tictactoe" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.BoardTest.shouldPrintMessageWhenBoardIsFull">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -344,32 +344,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="tictactoe" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="GameTest.shouldCallIsFullOnTheBoardWhenPlaying" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.tictactoe.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="tictactoe" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.tictactoe" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.tictactoe.GameTest" />
-      <option name="METHOD_NAME" value="shouldCallIsFullOnTheBoardWhenPlaying" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="false" name="BoardTest.shouldReturnTrueWhenBoardIsFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -438,6 +412,32 @@
       <option name="MAIN_CLASS_NAME" value="com.twu.tictactoe.BoardTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BoardTest.shouldPrintMessageWhenBoardIsFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.tictactoe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="tictactoe" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.tictactoe" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.tictactoe.BoardTest" />
+      <option name="METHOD_NAME" value="shouldPrintMessageWhenBoardIsFull" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -695,18 +695,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest.shouldCallIsFullOnTheBoardWhenPlaying" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenBoardIsFull" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenBoardIsNotFull" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenBoardIsFull" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenBoardIsNotFull" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldPrintMessageWhenBoardIsFull" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BoardTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenBoardIsNotFull" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenBoardIsFull" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.GameTest.shouldCallIsFullOnTheBoardWhenPlaying" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldPrintMessageWhenBoardIsFull" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnFalseWhenBoardIsNotFull" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BoardTest.shouldReturnTrueWhenBoardIsFull" />
       </list>
     </recent_temporary>
   </component>
@@ -720,12 +720,12 @@
       <created>1434652363542</created>
       <option name="number" value="Default" />
       <updated>1434652363542</updated>
-      <workItem from="1434652367093" duration="13314000" />
+      <workItem from="1434652367093" duration="13666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13314000" />
+    <option name="totallyTimeSpent" value="13666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -749,8 +749,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964234" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14020029" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16506024" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -870,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5179584">
-          <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
+        <state vertical-scroll-proportion="1.0706767">
+          <caret line="131" column="54" selection-start-line="131" selection-start-column="54" selection-end-line="131" selection-end-column="54" />
           <folding />
         </state>
       </provider>
