@@ -1,7 +1,5 @@
 package com.twu.tictactoe;
 
-import java.io.PrintStream;
-
 /**
  * Created by dlafeir on 6/18/15.
  */
