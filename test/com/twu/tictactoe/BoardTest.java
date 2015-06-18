@@ -93,4 +93,13 @@ public class BoardTest {
 
         assertThat(resultOfCheck, is(true));
     }
+
+    @Test
+    public void shouldPrintAMessageWhenMoveIsInvalid(){
+        board.putMoveOnBoard(1,'X');
+
+        board.checkIfMoveIsValid(1);
+        
+        verify(printStream).println("Location already taken");
+    }
 }
