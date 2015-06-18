@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0375ed58-1024-4ba4-92d4-54ad864fe8a3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/tictactoe/Board.java" afterPath="$PROJECT_DIR$/src/com/twu/tictactoe/Board.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java" afterPath="$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/tictactoe/Game.java" afterPath="$PROJECT_DIR$/src/com/twu/tictactoe/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tictactoe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5179584">
-              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+              <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -723,12 +720,12 @@
       <created>1434652363542</created>
       <option name="number" value="Default" />
       <updated>1434652363542</updated>
-      <workItem from="1434652367093" duration="13255000" />
+      <workItem from="1434652367093" duration="13314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13255000" />
+    <option name="totallyTimeSpent" value="13314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -874,7 +871,7 @@
     <entry file="file://$PROJECT_DIR$/test/com/twu/tictactoe/BoardTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5179584">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+          <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
           <folding />
         </state>
       </provider>

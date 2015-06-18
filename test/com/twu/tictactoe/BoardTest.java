@@ -70,7 +70,7 @@ public class BoardTest {
         String correctThirdRow = " | |O";
         String correctSecondAndFirstRow = " | | ";
 
-        board.putMoveOnBoard(gi9,'O');
+        board.putMoveOnBoard(9,'O');
         board.printBoard();
 
         verify(printStream, times(2)).println(correctSecondAndFirstRow);
