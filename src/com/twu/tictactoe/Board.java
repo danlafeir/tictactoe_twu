@@ -35,6 +35,12 @@ public class Board {
     }
 
     public boolean checkIfMoveIsValid(int index) {
-        return (movesOnBoard.get(index) == ' ');
+        if(movesOnBoard.get(index) == ' '){
+            return true;
+        }
+        else{
+            printStream.println("Location already taken");
+            return false;
+        }
     }
 }
