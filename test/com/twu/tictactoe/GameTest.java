@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -15,13 +16,15 @@ public class GameTest {
 
     private Game game;
     private Board board;
-    private List<Player> players;
+    private Player player1;
+    private Player player2;
 
     @Before
     public void setup(){
-        players = mock(List.class);
+        player1 = mock(Player.class);
+        player2 = mock(Player.class);
         board = mock(Board.class);
-        game = new Game(board, players);
+        game = new Game(board, player1, player2);
     }
 
     @Test
@@ -32,13 +35,17 @@ public class GameTest {
     }
 
     @Test
-    public void shouldCallGetUserInputWhenPlayingTheGame(){
-        Player player = mock(Player.class);
-
+    public void shouldCallGetUserInputFromPlayer1WhenPlayingTheGame(){
         game.play();
 
-        verify(player).getPlayersMove();
+        verify(player1).getPlayersMove();
     }
 
+    @Test
+    public void shouldPlaceAMoveOneABoardWhenPlayingGame(){
+        game.play();
+
+        verify(board).putMoveOnBoard(anyInt());
+    }
 
 }

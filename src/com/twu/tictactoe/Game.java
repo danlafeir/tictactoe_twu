@@ -1,18 +1,18 @@
 package com.twu.tictactoe;
 
-import java.util.List;
-
 /**
  * Created by dlafeir on 6/18/15.
  */
 public class Game {
 
     private Board board;
-    private List<Player> players;
+    private Player player1;
+    private Player player2;
 
-    public Game(Board board, List<Player> players) {
+    public Game(Board board, Player player1, Player player2) {
         this.board = board;
-        this.players = players;
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
     public void setupGame() {
@@ -21,5 +21,6 @@ public class Game {
 
 
     public void play() {
+        player1.getPlayersMove();
     }
 }

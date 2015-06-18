@@ -24,4 +24,7 @@ public class Board {
         printStream.println(CORRECT_ODD_ROW);
         
     }
+
+    public void putMoveOnBoard(int i) {
+    }
 }
