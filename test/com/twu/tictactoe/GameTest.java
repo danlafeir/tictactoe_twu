@@ -81,6 +81,12 @@ public class GameTest {
     }
 
     @Test
-    public void shouldCheckIfMoveIsValidWhenPlayingTheGame(){}
+    public void shouldCheckIfMoveIsValidWhenMakingAMove(){
+        when(player1.getPlayersMove()).thenReturn(1);
+
+        game.playerMove(player1, 'X');
+
+        verify(board).checkIfMoveIsValid(1);
+    }
 
 }

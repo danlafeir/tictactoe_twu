@@ -33,4 +33,8 @@ public class Board {
     public void putMoveOnBoard(int move, char x) {
         movesOnBoard.set(move, x);
     }
+
+    public void checkIfMoveIsValid(int i) {
+
+    }
 }
