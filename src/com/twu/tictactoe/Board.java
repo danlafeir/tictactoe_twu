@@ -4,35 +4,36 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Arrays.asList;
+
 
 public class Board {
     private PrintStream printStream;
-    private List<Character> movesOnBoard;
+    private List<String> movesOnBoard;
     public static final int ARRAY_OFFSET = 1;
 
-    public Board(PrintStream printStream) {
-        this.movesOnBoard = new ArrayList<Character>();
-        for(int i=0; i<9;i++){
-            this.movesOnBoard.add(' ');
-        }
+    public Board(PrintStream printStream, ArrayList<Cell> cells) {
+        this.movesOnBoard = asList(" "," "," ",
+                                    " "," "," ",
+                                    " "," "," ");
         this.printStream = printStream;
     }
 
     public void printBoard() {
-       printStream.printf( "%c|%c|%c\n" +
+       printStream.printf( "%s|%s|%s\n" +
                            "-----\n" +
-                           "%c|%c|%c\n" +
+                           "%s|%s|%s\n" +
                            "-----\n" +
-                           "%c|%c|%c\n", movesOnBoard.toArray());
+                           "%s|%s|%s\n", movesOnBoard.toArray());
         printStream.println();
     }
 
-    public void putMoveOnBoard(int move, char x) {
+    public void putMoveOnBoard(int move, String x) {
         movesOnBoard.set(move-ARRAY_OFFSET, x);
     }
 
     public boolean checkIfMoveIsValid(int move) {
-        if(movesOnBoard.get(move-ARRAY_OFFSET) == ' '){
+        if(movesOnBoard.get(move-ARRAY_OFFSET) == " "){
             return true;
         }
         else{
@@ -42,12 +43,20 @@ public class Board {
     }
 
     public boolean isFull() {
-        for(char c : movesOnBoard){
-            if(c == ' '){
+        for(String c : movesOnBoard){
+            if(c == " "){
                 return false;
             }
         }
         printStream.println("Game is a draw");
         return true;
+    }
+
+    public void print() {
+    }
+
+
+    public void mark(int position, String symbol) {
+        
     }
 }

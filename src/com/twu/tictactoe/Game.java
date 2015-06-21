@@ -6,7 +6,6 @@ public class Game {
     private Board board;
     private IOParsingAndPrinting IOParsingAndPrinting1;
     private IOParsingAndPrinting IOParsingAndPrinting2;
-    private int currentMove;
 
     public Game(Board board, IOParsingAndPrinting IOParsingAndPrinting1, IOParsingAndPrinting IOParsingAndPrinting2) {
         this.board = board;
@@ -27,11 +26,11 @@ public class Game {
     }
 
     public void playerMove(IOParsingAndPrinting IOParsingAndPrinting, char symbol) {
-        currentMove = IOParsingAndPrinting.getPlayersMove("");
+        int currentMove = IOParsingAndPrinting.getPlayersMove("");
         while(board.checkIfMoveIsValid(currentMove) == false){
             currentMove = IOParsingAndPrinting.getPlayersMove("");
         }
-        board.putMoveOnBoard(currentMove, symbol);
+        board.putMoveOnBoard(currentMove, "X");
         board.printBoard();
     }
 }
