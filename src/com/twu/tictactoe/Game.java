@@ -16,7 +16,10 @@ public class Game {
     public void play() {
         board.print();
         player1.move();
-        player2.move();
+        while(!board.isFull()){
+            player1.move();
+            player2.move();
+        }
     }
 
 

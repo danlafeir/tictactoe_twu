@@ -33,4 +33,8 @@ public class Board {
     public boolean isMoveValid(int position) {
         return (cells.get(position) == " ");
     }
+
+    public boolean isFull() {
+        return true;
+    }
 }
