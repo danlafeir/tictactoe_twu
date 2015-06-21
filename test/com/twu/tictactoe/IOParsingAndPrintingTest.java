@@ -33,16 +33,16 @@ public class IOParsingAndPrintingTest {
     public void shouldCallReadLineWhenGrabbingPlayersMove() throws IOException {
         when(bufferedReader.readLine()).thenReturn("1");
 
-        int move = IOParsingAndPrinting.getPlayersMove("Player one");
+        int move = IOParsingAndPrinting.getPlayersMoveAtCorrectArrayIndex("Player one");
 
-        assertThat(move, is(1));
+        assertThat(move, is(0));
     }
 
     @Test
     public void shouldPrintMessageWhenGrabbingUserInput(){
         String correctMessage = "Player one please enter a position between 1 and 9: ";
 
-        IOParsingAndPrinting.getPlayersMove("Player one");
+        IOParsingAndPrinting.getPlayersMoveAtCorrectArrayIndex("Player one");
 
         verify(printStream).print(correctMessage);
     }

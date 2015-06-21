@@ -4,28 +4,20 @@ package com.twu.tictactoe;
 public class Game {
 
     private Board board;
-    private IOParsingAndPrinting IOParsingAndPrinting1;
-    private IOParsingAndPrinting IOParsingAndPrinting2;
+    private Player player1;
+    private Player player2;
 
-    public Game(Board board, IOParsingAndPrinting IOParsingAndPrinting1, IOParsingAndPrinting IOParsingAndPrinting2) {
+    public Game(Board board, Player player1, Player player2) {
         this.board = board;
-        this.IOParsingAndPrinting1 = IOParsingAndPrinting1;
-        this.IOParsingAndPrinting2 = IOParsingAndPrinting2;
-    }
-
-    public void setupGame() {
-        board.print();
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
     public void play() {
-        playerMove(IOParsingAndPrinting1, 'X');
-        while(board.isFull() == false){
-            playerMove(IOParsingAndPrinting2, 'O');
-            playerMove(IOParsingAndPrinting1, 'X');
-        }
+        board.print();
+        player1.move();
+        player2.move();
     }
 
-    private void playerMove(IOParsingAndPrinting ioParsingAndPrinting1, char x) {
-    }
 
 }

@@ -6,6 +6,7 @@ import java.io.PrintStream;
 
 public class IOParsingAndPrinting {
 
+    public static final int ARRAY_OFFSET_CORRECTION = 1;
     private BufferedReader bufferedReader;
     private PrintStream printStream;
 
@@ -14,7 +15,7 @@ public class IOParsingAndPrinting {
         this.printStream = printStream;
     }
 
-    public int getPlayersMove(String playerName) {
+    public int getPlayersMoveAtCorrectArrayIndex(String playerName) {
         String inputMessage = playerName + " please enter a position between 1 and 9: ";
         printStream.print(inputMessage);
         int move = 0;
@@ -24,7 +25,7 @@ public class IOParsingAndPrinting {
         catch (NumberFormatException e){}
         catch (IOException e) {}
 
-        return move;
+        return move-ARRAY_OFFSET_CORRECTION;
     }
 
 }

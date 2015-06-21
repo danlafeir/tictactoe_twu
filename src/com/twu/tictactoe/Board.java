@@ -4,19 +4,13 @@ import java.io.PrintStream;
 import java.util.List;
 
 import static java.lang.String.format;
-import static java.util.Arrays.asList;
-
 
 public class Board {
     private PrintStream printStream;
-    private List<String> movesOnBoard;
-    public static final int ARRAY_OFFSET = 1;
     private List<String> cells;
 
     public Board(PrintStream printStream, List<String> cells) {
-        this.cells = asList(" "," "," ",
-                                    " "," "," ",
-                                    " "," "," ");
+        this.cells = cells;
         this.printStream = printStream;
     }
 
@@ -36,28 +30,4 @@ public class Board {
         this.print();
     }
 
-//    public boolean checkIfMoveIsValid(int move) {
-//        if(movesOnBoard.get(move-ARRAY_OFFSET) == " "){
-//            return true;
-//        }
-//        else{
-//            printStream.println("Location already taken");
-//            return false;
-//        }
-//    }
-
-    public boolean isFull() {
-        for(String c : movesOnBoard){
-            if(c == " "){
-                return false;
-            }
-        }
-        printStream.println("Game is a draw");
-        return true;
-    }
-
-
-    public boolean checkIfMoveIsValid(int i) {
-        return false;
-    }
 }
