@@ -4,30 +4,26 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by dlafeir on 6/18/15.
- */
+
 public class Board {
     private PrintStream printStream;
-    public static final String CORRECT_EVEN_ROW = "-----";
     private List<Character> movesOnBoard;
     public static final int ARRAY_OFFSET = 1;
 
     public Board(PrintStream printStream) {
-        movesOnBoard = new ArrayList<Character>();
+        this.movesOnBoard = new ArrayList<Character>();
         for(int i=0; i<9;i++){
-            movesOnBoard.add(' ');
+            this.movesOnBoard.add(' ');
         }
         this.printStream = printStream;
     }
 
     public void printBoard() {
-        printStream.println();
-        printStream.println(movesOnBoard.get(0) + "|" + movesOnBoard.get(1) + "|" + movesOnBoard.get(2));
-        printStream.println(CORRECT_EVEN_ROW);
-        printStream.println(movesOnBoard.get(3) + "|" + movesOnBoard.get(4) + "|" + movesOnBoard.get(5));
-        printStream.println(CORRECT_EVEN_ROW);
-        printStream.println(movesOnBoard.get(6) + "|" + movesOnBoard.get(7) + "|" + movesOnBoard.get(8));
+       printStream.printf( "%c|%c|%c\n" +
+                           "-----\n" +
+                           "%c|%c|%c\n" +
+                           "-----\n" +
+                           "%c|%c|%c\n", movesOnBoard.toArray());
         printStream.println();
     }
 

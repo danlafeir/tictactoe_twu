@@ -1,19 +1,17 @@
 package com.twu.tictactoe;
 
-/**
- * Created by dlafeir on 6/18/15.
- */
+
 public class Game {
 
     private Board board;
-    private Player player1;
-    private Player player2;
+    private IOParsingAndPrinting IOParsingAndPrinting1;
+    private IOParsingAndPrinting IOParsingAndPrinting2;
     private int currentMove;
 
-    public Game(Board board, Player player1, Player player2) {
+    public Game(Board board, IOParsingAndPrinting IOParsingAndPrinting1, IOParsingAndPrinting IOParsingAndPrinting2) {
         this.board = board;
-        this.player1 = player1;
-        this.player2 = player2;
+        this.IOParsingAndPrinting1 = IOParsingAndPrinting1;
+        this.IOParsingAndPrinting2 = IOParsingAndPrinting2;
     }
 
     public void setupGame() {
@@ -21,17 +19,17 @@ public class Game {
     }
 
     public void play() {
-        playerMove(player1, 'X');
+        playerMove(IOParsingAndPrinting1, 'X');
         while(board.isFull() == false){
-            playerMove(player2, 'O');
-            playerMove(player1, 'X');
+            playerMove(IOParsingAndPrinting2, 'O');
+            playerMove(IOParsingAndPrinting1, 'X');
         }
     }
 
-    public void playerMove(Player player, char symbol) {
-        currentMove = player.getPlayersMove();
+    public void playerMove(IOParsingAndPrinting IOParsingAndPrinting, char symbol) {
+        currentMove = IOParsingAndPrinting.getPlayersMove("");
         while(board.checkIfMoveIsValid(currentMove) == false){
-            currentMove = player.getPlayersMove();
+            currentMove = IOParsingAndPrinting.getPlayersMove("");
         }
         board.putMoveOnBoard(currentMove, symbol);
         board.printBoard();

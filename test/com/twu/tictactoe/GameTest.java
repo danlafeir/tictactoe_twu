@@ -12,15 +12,15 @@ public class GameTest {
 
     private Game game;
     private Board board;
-    private Player player1;
-    private Player player2;
+    private IOParsingAndPrinting IOParsingAndPrinting1;
+    private IOParsingAndPrinting IOParsingAndPrinting2;
 
     @Before
     public void setup(){
-        player1 = mock(Player.class);
-        player2 = mock(Player.class);
+        IOParsingAndPrinting1 = mock(IOParsingAndPrinting.class);
+        IOParsingAndPrinting2 = mock(IOParsingAndPrinting.class);
         board = mock(Board.class);
-        game = new Game(board, player1, player2);
+        game = new Game(board, IOParsingAndPrinting1, IOParsingAndPrinting2);
     }
 
     @Test
@@ -34,20 +34,20 @@ public class GameTest {
     public void shouldCallGetPlayersMoveFromPlayer1WhenPlayingTheGame(){
         game.play();
 
-        verify(player1).getPlayersMove();
+        verify(IOParsingAndPrinting1).getPlayersMove("");
     }
 
     @Test
     public void shouldCallGetPlayersMoveFromPlayer2WhenPlayingTheGame(){
         game.play();
 
-        verify(player2).getPlayersMove();
+        verify(IOParsingAndPrinting2).getPlayersMove("");
     }
 
     @Test
     public void shouldUseNumberTwoInPutMoveOnBoardWhenPlayerInputIsTwo(){
         when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
-        when(player1.getPlayersMove()).thenReturn(2);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(2);
 
         game.play();
 
@@ -57,7 +57,7 @@ public class GameTest {
     @Test
     public void shouldUseNumberThreeInPutMoveOnBoardWhenPlayerInputIsThree(){
         when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
-        when(player1.getPlayersMove()).thenReturn(3);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(3);
 
         game.play();
 
@@ -67,8 +67,8 @@ public class GameTest {
     @Test
     public void shouldUseAOWhenPlayerTwoMakesAMove(){
         when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
-        when(player1.getPlayersMove()).thenReturn(1);
-        when(player2.getPlayersMove()).thenReturn(3);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(1);
+        when(IOParsingAndPrinting2.getPlayersMove("")).thenReturn(3);
 
         game.play();
 
@@ -86,9 +86,9 @@ public class GameTest {
     @Test
     public void shouldCheckIfMoveIsValidWithWhenPlayerOneChoosesOne(){
         when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
-        when(player1.getPlayersMove()).thenReturn(1);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(1);
 
-        game.playerMove(player1, 'X');
+        game.playerMove(IOParsingAndPrinting1, 'X');
 
         verify(board).checkIfMoveIsValid(1);
     }
@@ -96,29 +96,29 @@ public class GameTest {
     @Test
     public void shouldCheckIfMoveIsValidWithWhenPlayerOneChoosesTwo(){
         when(board.checkIfMoveIsValid(anyInt())).thenReturn(true);
-        when(player1.getPlayersMove()).thenReturn(2);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(2);
 
-        game.playerMove(player1, 'X');
+        game.playerMove(IOParsingAndPrinting1, 'X');
 
         verify(board).checkIfMoveIsValid(2);
     }
 
     @Test
     public void shouldCallPutMoveOnBoardOnceWhenAMoveIsInvalid(){
-        when(player1.getPlayersMove()).thenReturn(2).thenReturn(3);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(2).thenReturn(3);
         when(board.checkIfMoveIsValid(anyInt())).thenReturn(false).thenReturn(true);
 
-        game.playerMove(player1, 'X');
+        game.playerMove(IOParsingAndPrinting1, 'X');
 
         verify(board, times(1)).putMoveOnBoard(3,'X');
     }
 
     @Test
     public void shouldPrintBoardOnceWhenAMoveIsInvalid(){
-        when(player1.getPlayersMove()).thenReturn(2);
+        when(IOParsingAndPrinting1.getPlayersMove("")).thenReturn(2);
         when(board.checkIfMoveIsValid(2)).thenReturn(true);
 
-        game.playerMove(player1, 'X');
+        game.playerMove(IOParsingAndPrinting1, 'X');
 
         verify(board, times(1)).printBoard();
     }

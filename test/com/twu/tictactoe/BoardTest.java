@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -18,66 +19,46 @@ public class BoardTest {
     private PrintStream printStream;
     private Board board;
     public static final String DIVIDER_OF_ROWS = "-----";
+    private ArrayList<Character> movesOnBoard;
+    private String correctBoard;
 
 
     @Before
-    public void setup(){
+    public void setup() {
         printStream = mock(PrintStream.class);
         board = new Board(printStream);
+        correctBoard = "%c|%c|%c\n" +
+                    "-----\n" +
+                    "%c|%c|%c\n" +
+                    "-----\n" +
+                    "%c|%c|%c\n";
+        movesOnBoard = new ArrayList<Character>();
+        for(int i=0; i<9;i++){
+            movesOnBoard.add(' ');
+        }
     }
 
     @Test
-    public void shouldPrintBoardCorrectly(){
-        String correctOddRow = " | | ";
-
+    public void shouldPrintBoardCorrectly() {
         board.printBoard();
 
-        verify(printStream, times(3)).println(correctOddRow);
-        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
+        verify(printStream).printf(correctBoard,movesOnBoard.toArray());
     }
 
     @Test
-    public void shouldPutAnXInTopLeftPositionWhenReceivingPlayerInputOfOne(){
-        String correctFirstRow = "X| | ";
-        String correctSecondAndThirdRow = " | | ";
+    public void shouldPutAnXInBottomRightPositionWhenReceivingPlayerInputOfNine() {
+        movesOnBoard.set(8,'X');
 
-        board.putMoveOnBoard(1,'X');
+        board.putMoveOnBoard(9, 'X');
         board.printBoard();
 
-        verify(printStream, times(1)).println(correctFirstRow);
-        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
-        verify(printStream, times(2)).println(correctSecondAndThirdRow);
+        verify(printStream).printf(correctBoard,movesOnBoard.toArray());
     }
 
-    @Test
-    public void shouldPutAnXInBottomRightPositionWhenReceivingPlayerInputOfNine(){
-        String correctThirdRow = " | |X";
-        String correctSecondAndFirstRow = " | | ";
-
-        board.putMoveOnBoard(9,'X');
-        board.printBoard();
-
-        verify(printStream, times(2)).println(correctSecondAndFirstRow);
-        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
-        verify(printStream, times(1)).println(correctThirdRow);
-    }
 
     @Test
-    public void shouldPutAnOInBottomRightPositionWhenReceivingPlayerInputOfNine(){
-        String correctThirdRow = " | |O";
-        String correctSecondAndFirstRow = " | | ";
-
-        board.putMoveOnBoard(9,'O');
-        board.printBoard();
-
-        verify(printStream, times(2)).println(correctSecondAndFirstRow);
-        verify(printStream, times(2)).println(DIVIDER_OF_ROWS);
-        verify(printStream, times(1)).println(correctThirdRow);
-    }
-
-    @Test
-    public void shouldReturnFalseWhenMoveIsAlreadyAtThatIndex(){
-        board.putMoveOnBoard(1,'X');
+    public void shouldReturnFalseWhenMoveIsAlreadyAtThatIndex() {
+        board.putMoveOnBoard(1, 'X');
 
         boolean resultOfCheck = board.checkIfMoveIsValid(1);
 
@@ -85,15 +66,15 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldReturnTrueWhenThereIsNothingAtIndex(){
+    public void shouldReturnTrueWhenThereIsNothingAtIndex() {
         boolean resultOfCheck = board.checkIfMoveIsValid(1);
 
         assertThat(resultOfCheck, is(true));
     }
 
     @Test
-    public void shouldPrintAMessageWhenMoveIsInvalid(){
-        board.putMoveOnBoard(1,'X');
+    public void shouldPrintAMessageWhenMoveIsInvalid() {
+        board.putMoveOnBoard(1, 'X');
 
         board.checkIfMoveIsValid(1);
 
@@ -101,9 +82,9 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldReturnTrueWhenBoardIsFull(){
-        for(int i=1; i<=9; i++){
-            board.putMoveOnBoard(i,'X');
+    public void shouldReturnTrueWhenBoardIsFull() {
+        for (int i = 1; i <= 9; i++) {
+            board.putMoveOnBoard(i, 'X');
         }
 
         boolean resultOfCheck = board.isFull();
@@ -112,16 +93,16 @@ public class BoardTest {
     }
 
     @Test
-    public void shouldReturnFalseWhenBoardIsNotFull(){
+    public void shouldReturnFalseWhenBoardIsNotFull() {
         boolean resultOfCheck = board.isFull();
 
         assertThat(resultOfCheck, is(false));
     }
 
     @Test
-    public void shouldPrintMessageWhenBoardIsFull(){
-        for(int i=1; i<=9; i++){
-            board.putMoveOnBoard(i,'X');
+    public void shouldPrintMessageWhenBoardIsFull() {
+        for (int i = 1; i <= 9; i++) {
+            board.putMoveOnBoard(i, 'X');
         }
 
         board.isFull();
