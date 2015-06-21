@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
-        ArrayList<Cell> cells = new ArrayList<Cell>();
+    public static void main(java.lang.String[] args) {
+        ArrayList<String> cells = new ArrayList<String>();
         Board board = new Board(System.out, cells);
         InputStreamReader in = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(in);

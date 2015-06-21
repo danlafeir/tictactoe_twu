@@ -14,7 +14,7 @@ public class Game {
     }
 
     public void setupGame() {
-        board.printBoard();
+        board.print();
     }
 
     public void play() {
@@ -25,12 +25,7 @@ public class Game {
         }
     }
 
-    public void playerMove(IOParsingAndPrinting IOParsingAndPrinting, char symbol) {
-        int currentMove = IOParsingAndPrinting.getPlayersMove("");
-        while(board.checkIfMoveIsValid(currentMove) == false){
-            currentMove = IOParsingAndPrinting.getPlayersMove("");
-        }
-        board.putMoveOnBoard(currentMove, "X");
-        board.printBoard();
+    private void playerMove(IOParsingAndPrinting ioParsingAndPrinting1, char x) {
     }
+
 }

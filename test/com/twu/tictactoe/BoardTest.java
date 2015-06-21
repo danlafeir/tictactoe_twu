@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.*;
 
 
@@ -21,7 +19,7 @@ public class BoardTest {
     private PrintStream printStream;
     private Board board;
     private List<String> movesOnBoard;
-    private ArrayList<Cell> cells;
+    private ArrayList<String> cells;
 
 
     @Before
@@ -44,6 +42,20 @@ public class BoardTest {
                 " | | \n";
 
         board.print();
+
+        verify(printStream).println(correctBoard);
+    }
+
+    @Test
+    public void shouldPutXInPositionOneWhenBoardMarkedInPositionOne(){
+        when(cells.get(0)).thenReturn("X");
+        String correctBoard =  "X| | \n" +
+                "-----\n" +
+                " | | \n" +
+                "-----\n" +
+                " | | \n";
+
+        board.mark(0, "X");
 
         verify(printStream).println(correctBoard);
     }

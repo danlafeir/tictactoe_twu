@@ -1,9 +1,9 @@
 package com.twu.tictactoe;
 
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.String.format;
 import static java.util.Arrays.asList;
 
 
@@ -11,36 +11,40 @@ public class Board {
     private PrintStream printStream;
     private List<String> movesOnBoard;
     public static final int ARRAY_OFFSET = 1;
+    private List<String> cells;
 
-    public Board(PrintStream printStream, ArrayList<Cell> cells) {
-        this.movesOnBoard = asList(" "," "," ",
+    public Board(PrintStream printStream, List<String> cells) {
+        this.cells = asList(" "," "," ",
                                     " "," "," ",
                                     " "," "," ");
         this.printStream = printStream;
     }
 
-    public void printBoard() {
-       printStream.printf( "%s|%s|%s\n" +
-                           "-----\n" +
-                           "%s|%s|%s\n" +
-                           "-----\n" +
-                           "%s|%s|%s\n", movesOnBoard.toArray());
-        printStream.println();
+    public void print() {
+        String boardString = format(
+                "%s|%s|%s\n" +
+                "-----\n" +
+                "%s|%s|%s\n" +
+                "-----\n" +
+                "%s|%s|%s\n", cells.toArray());
+
+        printStream.println(boardString);
     }
 
-    public void putMoveOnBoard(int move, String x) {
-        movesOnBoard.set(move-ARRAY_OFFSET, x);
+    public void mark(int position, String symbol) {
+        cells.set(position,symbol);
+        this.print();
     }
 
-    public boolean checkIfMoveIsValid(int move) {
-        if(movesOnBoard.get(move-ARRAY_OFFSET) == " "){
-            return true;
-        }
-        else{
-            printStream.println("Location already taken");
-            return false;
-        }
-    }
+//    public boolean checkIfMoveIsValid(int move) {
+//        if(movesOnBoard.get(move-ARRAY_OFFSET) == " "){
+//            return true;
+//        }
+//        else{
+//            printStream.println("Location already taken");
+//            return false;
+//        }
+//    }
 
     public boolean isFull() {
         for(String c : movesOnBoard){
@@ -52,11 +56,8 @@ public class Board {
         return true;
     }
 
-    public void print() {
-    }
 
-
-    public void mark(int position, String symbol) {
-
+    public boolean checkIfMoveIsValid(int i) {
+        return false;
     }
 }
