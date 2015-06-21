@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
  */
 public class IOParsingAndPrintingTest {
 
-    private IOParsingAndPrinting IOParsingAndPrinting;
+    private IOParsingAndPrinting ioParsingAndPrinting;
     private BufferedReader bufferedReader;
     private PrintStream printStream;
 
@@ -26,14 +26,14 @@ public class IOParsingAndPrintingTest {
     public void setup(){
         bufferedReader = mock(BufferedReader.class);
         printStream = mock(PrintStream.class);
-        IOParsingAndPrinting = new IOParsingAndPrinting(bufferedReader, printStream);
+        ioParsingAndPrinting = new IOParsingAndPrinting(bufferedReader, printStream);
     }
 
     @Test
     public void shouldCallReadLineWhenGrabbingPlayersMove() throws IOException {
         when(bufferedReader.readLine()).thenReturn("1");
 
-        int move = IOParsingAndPrinting.getPlayersMoveAtCorrectArrayIndex("Player one");
+        int move = ioParsingAndPrinting.getPlayersMoveAtCorrectArrayIndex("Player one");
 
         assertThat(move, is(0));
     }
@@ -42,9 +42,16 @@ public class IOParsingAndPrintingTest {
     public void shouldPrintMessageWhenGrabbingUserInput(){
         String correctMessage = "Player one please enter a position between 1 and 9: ";
 
-        IOParsingAndPrinting.getPlayersMoveAtCorrectArrayIndex("Player one");
+        ioParsingAndPrinting.getPlayersMoveAtCorrectArrayIndex("Player one");
 
         verify(printStream).print(correctMessage);
+    }
+
+    @Test
+    public void shouldCallPrintLnPrintstreamWhenPrintlnIsCalled(){
+        ioParsingAndPrinting.println("");
+
+        verify(printStream).println("");
     }
 
 }

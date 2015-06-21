@@ -15,7 +15,7 @@ public class Main {
         InputStreamReader in = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(in);
         IOParsingAndPrinting io = new IOParsingAndPrinting(bufferedReader, System.out);
-        Player player1 = new Player("Player 2", "O", io, board);
+        Player player1 = new Player("Player 1", "X", io, board);
         Player player2 = new Player("Player 2", "O", io, board);
         Game game = new Game(board, player1, player2);
 

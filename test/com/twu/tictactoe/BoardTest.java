@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.*;
 
 
@@ -58,6 +60,24 @@ public class BoardTest {
         board.mark(0, "X");
 
         verify(printStream).println(correctBoard);
+    }
+
+    @Test
+    public void shouldReturnTrueWhenMoveIsValid(){
+        when(cells.get(0)).thenReturn(" ");
+
+        boolean correctValue = board.isMoveValid(0);
+
+        assertThat(correctValue, is(true));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenMoveIsInvalid(){
+        when(cells.get(0)).thenReturn("X");
+
+        boolean correctValue = board.isMoveValid(0);
+
+        assertThat(correctValue, is(false));
     }
 
 }

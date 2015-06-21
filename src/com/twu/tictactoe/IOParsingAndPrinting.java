@@ -28,4 +28,8 @@ public class IOParsingAndPrinting {
         return move-ARRAY_OFFSET_CORRECTION;
     }
 
+    public void println(String s){
+        printStream.println(s);
+    }
+
 }

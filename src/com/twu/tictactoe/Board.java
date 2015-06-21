@@ -30,4 +30,7 @@ public class Board {
         this.print();
     }
 
+    public boolean isMoveValid(int position) {
+        return (cells.get(position) == " ");
+    }
 }

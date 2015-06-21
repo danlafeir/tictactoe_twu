@@ -15,6 +15,10 @@ public class Player {
 
     public void move() {
         int currentMove = io.getPlayersMoveAtCorrectArrayIndex(this.name);
+        while(!board.isMoveValid(currentMove)){
+            io.println("Location already taken");
+            currentMove = io.getPlayersMoveAtCorrectArrayIndex(this.name);
+        }
         board.mark(currentMove, this.symbol);
     }
 }
