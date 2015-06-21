@@ -2,13 +2,15 @@ package com.twu.tictactoe;
 
 public class Player {
     private IOParsingAndPrinting io;
+    private Board board;
 
     public Player(IOParsingAndPrinting io, Board board) {
         this.io = io;
+        this.board = board;
     }
 
     public void move() {
-        io.getPlayersMove("Player 1");
-
+        int currentMove = io.getPlayersMove("Player 1");
+        board.mark(currentMove, "X");
     }
 }

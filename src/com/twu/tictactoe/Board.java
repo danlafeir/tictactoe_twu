@@ -57,6 +57,6 @@ public class Board {
 
 
     public void mark(int position, String symbol) {
-        
+
     }
 }
